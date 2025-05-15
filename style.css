@@ -1,0 +1,220 @@
+* { /* O * serve com */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+   --text-color: white;
+   --bg-url: url(./assets/bg-mobile.jpg);
+   --stroke-solor: rgba(255, 255, 255, 0.5);
+   --surface-color: rgba(255, 255, 255, 0.05);
+   --surface-color-hover: rgba(0, 0, 0, 0.02);
+   --highlight-color: rgba(255, 255, 255, 0.2);
+   --switch-bg-url: url(./assets/MoonStars.svg);
+}
+
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/Sun.svg);
+}
+
+
+
+
+body {
+    /*
+    background-image:url(./assets/bg-mobile.jpg) ;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    */
+    background:var(--bg-url) no-repeat top center/cover;
+    
+    /*background: color image repeat position/size */
+}
+
+body * {
+    
+
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+ 
+}
+
+#container {
+    width: 360px;
+    /*border: 1px solid red;
+    margin-right: auto;
+    margin-left: auto;
+    margin: auto;
+    padding-top: 56px; 
+    esses podem ser substituido pelo codigo abaixo, a borda n é mais necessaria pois ja temos noção de como ela ira funcionar */
+
+    margin: 56px auto 0px;
+    padding: 0 24px;
+
+}
+
+/*PROFILE*/
+#profile {
+    text-align: center;
+    padding: 24px;
+}
+
+
+#profile img {
+    /*display: block;*/
+    width: 112px; 
+    border-radius: 50%;
+    /*margin: auto;*/
+    /* caso nao tenha o #profile igual o de cima o display block e a margin auto são necessarios*/  
+}
+
+#profile p {
+    font-weight: 500; 
+    /* quanto menor o font-weight mais negrito fica*/
+    font-size: 16px;  
+    /* nao e necessario colocar pois por padrao os navegadores ja tem fonte-size de 16px*/
+    line-height: 24px;
+    /* line-heigth é a altura da linha*/
+    margin-top: 8px;
+}
+
+/*SWITCH*/
+#switch {
+   position: relative;
+   width: 64px;
+
+   margin: 0 auto;
+}
+
+#switch button {
+  width:32px;
+  height: 32px;
+  background:white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  
+  position: absolute; /* o position: absolute faz com que fique um sobre o outro*/
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform:translateY(-50%); /* transform:translateY(-50%); serve para mover o botao para cima ou para baixo*/
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--stroke-solor);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+
+/* links */
+
+ul {
+    list-style: none;
+
+    /*display: flex;
+    flex-direction: column; /* se ficar em  flex-direction: column fica um embaixo do outro, caso tire o  flex-direction: column ele ficara um ao aldo do outro*/ 
+    /*gap: 8px; /* os espaços fica entre os elementos*/
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 24px 0;
+}
+
+ul li a {
+  /*border: 1px solid red; serve para fazer a borda ao redor dos elementos*/
+
+  display: flex; /* cria uma linha virtual */
+  align-items: center; /* o   align-items: center; faz com que a escrita fique ao centro da linha virtual criada pelo display: flex;*/
+  justify-content: center; /* ele tbm fica ao meio porem pensando que a linha estaria passando de cima para baixo na tela*/
+  padding: 16px 24px;
+  /*flex-direction: row;
+  gap: 8px;
+  esse nao sao necessarios, pois nao alteram nada, nao fazem sentido*/
+ 
+  /*justify-content: center; faz com que os elementos se alinhe ao centro*/
+
+  /*display: block;
+  text-align: center;
+  faz a mesma funcao q o justify-content: center; */
+
+  background: var(--surface-color); /* cor dos fundos dos botoes*/
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+
+
+  /* text-decoration: underline ou text-decoration: overline
+  underline para deixar a linha ao meio da escrita e overline para deixar a escrita em cima da escrita*/
+}
+
+/* pseudo-selector */
+ul li a:hover {
+  background: var(--surface-color-hover); /* cor dos fundos dos botoes*/
+
+  border: 1.5px solid var(--text-color)
+}
+
+/* social links */
+
+#social-links {
+    display: flex;
+    justify-content: center;
+
+    padding: 24px 0 ;
+
+    font-size: 24px;
+}
+
+/* serve para colocar o logo no meio da bolinha q vai aparecer quando colocar o mouse em cima da logo */
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover {
+    background:var(--highlight-color);
+}
+
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
