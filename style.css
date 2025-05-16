@@ -95,6 +95,7 @@ body * {
    width: 64px;
 
    margin: 0 auto;
+   cursor: pointer
 }
 
 #switch button {
@@ -109,13 +110,23 @@ body * {
   left: 0;
   z-index: 1;
   transform:translateY(-50%); /* transform:translateY(-50%); serve para mover o botao para cima ou para baixo*/
-  transition: all 0.5s ease-out;
-  cursor: pointer;
+  
+  animation: slide-back .2s;
+  /* nao e necessario por o forwards pois aq o left ja é 0*/
+   cursor: pointer
 }
 
 .light #switch button {
-    right: 0;
+    /*right: 0;
     left: initial;
+    foi utilizado quando nao tinha animação*/
+    animation: slide-in .2s forwards;
+    
+    /* o forwards serve para manter a animação no lugar certo */
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 }
 
 
@@ -232,4 +243,23 @@ footer {
     .light {
         --bg-url: url(./assets/bg-desktop-light.jpg);
     }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+} 
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
