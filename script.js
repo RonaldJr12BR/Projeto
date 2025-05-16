@@ -36,6 +36,7 @@ function criaBotoes(){
     {label: 'Inscrever-se no NLW', href: '#'},
     {label: 'Baixar meu e-book', href: '#'},
     {label: 'Ver meu portfólio', href: 'https://github.com/RonaldJr12BR'},
+    {label: 'Carros esportivos', href: 'https://carros-esportivos-zeta.vercel.app/'},
     {label: 'Conheça o explorer', href: '#'},
     {label: "Google", href:"https://google.com.br"},
     {label: "Youtube", href:"https://youtube.com"},
