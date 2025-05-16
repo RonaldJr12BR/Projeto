@@ -50,14 +50,14 @@ body * {
 }
 
 #container {
-    width: 360px;
+    width: 100%;
     /*border: 1px solid red;
     margin-right: auto;
     margin-left: auto;
     margin: auto;
     padding-top: 56px; 
     esses podem ser substituido pelo codigo abaixo, a borda n é mais necessaria pois ja temos noção de como ela ira funcionar */
-
+    max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
 
